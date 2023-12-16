@@ -30,6 +30,10 @@ int main(int argc, char **argv) {
   char string[length + 1];
   initializeBlankString(length, string);
   printf("Initialized string: %s\n",string);
+  printWithSpaces(string);
+  const char *salution = "dinosaur";
+  char revealed[] = "__________";
+  char geuseedLetter = 'a';
 
   return 0;
 }

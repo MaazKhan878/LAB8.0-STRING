@@ -15,9 +15,31 @@ void initializeBlankString(int length, char *string){
   string[length] = '\0';
 }
 
-void printWithSpaces() {}
+void printWithSpaces(const char *str){
+  if(str == NULL){
+    printf("Invalide Pointer...\n");
+    return;
+  }
+  int length = strlen(str);
+  for(int i = 0; i<length; i++){
+    printf("%c ",str[i]);
+  }
+}
 
-void revealGuessedLetter() {}
+int revealGuessedLetter(const char *salution,  char *revealed, char guessedLetter) {
+  if(salution == NULL || revealed == NULL){
+    printf("Invalide address..\n");
+    return NULL;
+  }
+  int mode = 0;
+  for(int i = 0; salution[i] != '\0' && revealed[i] != '\0';i++){
+    if(revealed[i] == '_' && salution[i] == guessedLetter){
+      revealed[i] = guessedLetter;
+      mode = 1;
+    }
+  }
+  return mode;
+}
 
 void checkGuess() {}
 
