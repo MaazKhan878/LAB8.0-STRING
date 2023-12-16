@@ -10,7 +10,7 @@ void printWithSpaces(const char *str);
 int revealGuessedLetter(const char *salution,  char *revealed, char guessedLetter);
 
 //TODO: define, document, and implement this function
-int checkGuess(char *salution, char *revealed);
+int checkGuess(const char *solution, const char *revealed);
 
 
 //the following functions have been done for you.
@@ -19,7 +19,7 @@ int checkGuess(char *salution, char *revealed);
  * Sets the game up, checks for win condition,
  * prints relevant data
  */
-void startGame(char *wordToGuess);
+void startGame(char word[25]);
 
 /**
  * Clears the unix terminal of previous input

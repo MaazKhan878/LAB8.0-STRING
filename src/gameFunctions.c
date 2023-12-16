@@ -29,7 +29,7 @@ void printWithSpaces(const char *str){
 int revealGuessedLetter(const char *salution,  char *revealed, char guessedLetter) {
   if(salution == NULL || revealed == NULL){
     printf("Invalide address..\n");
-    return 0;
+    return 1;
   }
   int mode = 0;
   for(int i = 0; salution[i] != '\0' && revealed[i] != '\0';i++){
@@ -64,8 +64,8 @@ void startGame(char word[25]) {
 
   // Gets the total number of chances
   printf(
-      "Please enter the total number of incorrect guesses you would like to be "
-      "able to make: ");
+    "Please enter the total number of incorrect guesses you would like to be "
+    "able to make: ");
   scanf("%d", &possibleBadGuesses);
   printWithSpaces(revealedLetters);
 
@@ -84,7 +84,7 @@ void startGame(char word[25]) {
       numBadGuesses++;
     }
 
-    // Outputs game information to the user
+     // Outputs game information to the user
     drawHorse(numBadGuesses, possibleBadGuesses);
     printWithSpaces(revealedLetters);
   }

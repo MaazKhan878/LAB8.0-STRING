@@ -7,7 +7,7 @@
 #include <stdio.h>
 #include <time.h>
 
-#include "..\include\gameFunctions.h"
+#include "gameFunctions.h"
 
 int main(int argc, char **argv) {
   char guessWords[50][25];
@@ -32,9 +32,9 @@ int main(int argc, char **argv) {
   printf("Initialized string: %s\n",string);
   printWithSpaces(string);
   const char *salution = "dinosaur";
-  char revealed[] = "__________";
+  char revealed[] = "________";
   char geuseedLetter = 'a';
-  int checkGuess(salution, revealed);
+  checkGuess(salution, revealed);
 
   return 0;
 }

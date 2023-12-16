@@ -7,16 +7,16 @@ CCFLAGS = -Iinclude -std=c99
 
 all: horse
 
-horse: main.o gameFunctions.o
-	$(CC) $(CCFLAGS) obj/main.o obj/gameFunctions.o -o horse -lm
+horse: obj/main.o obj/gameFunctions.o
+	$(CC) $(CCFLAGS) obj/main.o obj/gameFunctions.o -o horse
 
-main.o: src/main.c
-	@mkdir -p obj
-	$(CC) $(CCFLAGS) -c src/main.c -o obj/$@
+obj/main.o: src/main.c
+	@if not exist obj mkdir obj
+	$(CC) $(CCFLAGS) -c src/main.c -o obj/main.o
 
-gameFunctions.o: src/gameFunctions.c include/gameFunctions.h
-	@mkdir -p obj
-	$(CC) $(CCFLAGS) -c src/gameFunctions.c -o obj/$@ -lm
+obj/gameFunctions.o: src/gameFunctions.c include/gameFunctions.h
+	@if not exist obj mkdir obj
+	$(CC) $(CCFLAGS) -c src/gameFunctions.c -o obj/gameFunctions.o
 
 clean:
-	rm -rf obj/*o
+	rm -rf obj/*o horse
