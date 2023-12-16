@@ -3,8 +3,9 @@
 #include <string.h>
 
 #include "..\include\gameFunctions.h"
-
+//Function: not return value just store '_' in a string
 void initializeBlankString(int length, char *string){
+  // check validaty
   if(length <= 0 || string == NULL){
     printf("Invalide input\n");
     return;
@@ -12,27 +13,31 @@ void initializeBlankString(int length, char *string){
   for(int i = 0; i<length; i++){
     string[i] = '_';
   }
+  // store '/0' string end
   string[length - 1] = '\0';
 }
-
+// Function: add spaces b/w the character of the string
 void printWithSpaces(const char *str){
   if(str == NULL){
     printf("Invalide Pointer...\n");
     return;
   }
+  // string.h Function to find length of string 
   int length = strlen(str);
   for(int i = 0; i<length; i++){
     printf("%c ",str[i]);
   }
 }
-
+// Function: find the gussed character present in the string or not
 int revealGuessedLetter(const char *salution,  char *revealed, char guessedLetter) {
   if(salution == NULL || revealed == NULL){
     printf("Invalide address..\n");
     return 1;
   }
   int mode = 0;
+  // loop: both string not equal to the '\0' loop terminate
   for(int i = 0; salution[i] != '\0' && revealed[i] != '\0';i++){
+    // if guess character equal to string character it will store the charater to revealed string return 1
     if(revealed[i] == '_' && salution[i] == guessedLetter){
       revealed[i] = guessedLetter;
       mode = 1;
@@ -40,7 +45,7 @@ int revealGuessedLetter(const char *salution,  char *revealed, char guessedLette
   }
   return mode;
 }
-
+// Just compare two string if both == then return 1 not 0
 int checkGuess(const char *salution, const char *revealed) {
   if(salution == NULL || revealed == NULL){
     printf("Invalide\n");
