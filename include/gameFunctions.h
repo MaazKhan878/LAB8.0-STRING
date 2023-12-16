@@ -1,16 +1,16 @@
 
 //TODO: define, document, and implement this function
-void initializeBlankString(int length, char *string)
+void initializeBlankString(int length, char *string);
 
 //TODO: define, document, and implement this function
 void printWithSpaces(const char *str);
 
 //TODO: define, document, and implement this function
 
-int revealGuessedLetter(const char *salution,  char *revealed, char guessedLetter) 
+int revealGuessedLetter(const char *salution,  char *revealed, char guessedLetter);
 
 //TODO: define, document, and implement this function
-void checkGuess();
+int checkGuess(char *salution, char *revealed);
 
 
 //the following functions have been done for you.

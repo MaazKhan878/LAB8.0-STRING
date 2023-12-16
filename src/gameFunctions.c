@@ -12,7 +12,7 @@ void initializeBlankString(int length, char *string){
   for(int i = 0; i<length; i++){
     string[i] = '_';
   }
-  string[length] = '\0';
+  string[length - 1] = '\0';
 }
 
 void printWithSpaces(const char *str){
@@ -29,7 +29,7 @@ void printWithSpaces(const char *str){
 int revealGuessedLetter(const char *salution,  char *revealed, char guessedLetter) {
   if(salution == NULL || revealed == NULL){
     printf("Invalide address..\n");
-    return NULL;
+    return 0;
   }
   int mode = 0;
   for(int i = 0; salution[i] != '\0' && revealed[i] != '\0';i++){
@@ -41,7 +41,14 @@ int revealGuessedLetter(const char *salution,  char *revealed, char guessedLette
   return mode;
 }
 
-void checkGuess() {}
+int checkGuess(const char *salution, const char *revealed) {
+  if(salution == NULL || revealed == NULL){
+    printf("Invalide\n");
+    return 0;
+  }
+  int result = strcmp(salution, revealed);
+  return (result == 0)? 1: 0;
+}
 
 void startGame(char word[25]) {
   int won = 0;  // Flag to see if the user has won yet

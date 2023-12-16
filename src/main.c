@@ -34,6 +34,7 @@ int main(int argc, char **argv) {
   const char *salution = "dinosaur";
   char revealed[] = "__________";
   char geuseedLetter = 'a';
+  int checkGuess(salution, revealed);
 
   return 0;
 }
