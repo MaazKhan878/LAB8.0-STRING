@@ -1,15 +1,15 @@
 
 //TODO: define, document, and implement this function
-initializeBlankString();
+void initializeBlankString(int n, char *string);
 
 //TODO: define, document, and implement this function
-printWithSpaces();
+void printWithSpaces();
 
 //TODO: define, document, and implement this function
-revealGuessedLetter();
+void revealGuessedLetter();
 
 //TODO: define, document, and implement this function
-checkGuess();
+void checkGuess();
 
 
 //the following functions have been done for you.

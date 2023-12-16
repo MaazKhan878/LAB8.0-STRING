@@ -2,15 +2,24 @@
 #include <math.h>
 #include <string.h>
 
-#include "gameFunctions.h"
+#include "..\include\gameFunctions.h"
 
-initializeBlankString() {}
+void initializeBlankString(int length, char *string){
+  if(length <= 0 || string == NULL){
+    printf("Invalide input\n");
+    return;
+  }
+  for(int i = 0; i<length; i++){
+    string[i] = '_';
+  }
+  string[length] = '\0';
+}
 
-printWithSpaces() {}
+void printWithSpaces() {}
 
-revealGuessedLetter() {}
+void revealGuessedLetter() {}
 
-checkGuess() {}
+void checkGuess() {}
 
 void startGame(char word[25]) {
   int won = 0;  // Flag to see if the user has won yet

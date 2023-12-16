@@ -7,7 +7,7 @@
 #include <stdio.h>
 #include <time.h>
 
-#include "gameFunctions.h"
+#include "..\include\gameFunctions.h"
 
 int main(int argc, char **argv) {
   char guessWords[50][25];
@@ -26,6 +26,10 @@ int main(int argc, char **argv) {
 
   // Starts the game
   startGame(guessWords[stringNumber]);
+  int length = 10;
+  char string[length + 1];
+  initializeBlankString(length, string);
+  printf("Initialized string: %s\n",string);
 
   return 0;
 }
