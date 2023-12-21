@@ -11,7 +11,7 @@ void initializeBlankString(int length, char *string){
     return;
   }
   for(int i = 0; i<length; i++){
-    string[i] = '_';
+    string[i] = ' ';
   }
   // store '/0' string end
   string[length - 1] = '\0';
